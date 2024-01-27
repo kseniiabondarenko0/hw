@@ -1,137 +1,40 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-
-
-        public static void main(String[] args) {
-            int val = 5;
-            int[] arr = {-1,-3,-5,-4};
-            int[] arr2 = {5,-3,-2,16,55,0};
-            task1();
-
-            task2();
-
-            task3();
-
-            task4();
-
-            task5();
-
-            task6();
-
-            max(arr);
-
-            task7();
-
-            fib();
-
-
-
-
-
-
-
-
-        }
-        public static void max(int[] arr){
-            int max = arr[0];
-            for (int i = 0; i < arr.length; i++) {
-                if (max< arr[i]){
-                    max = arr[i];
-                }
-            }
-            System.out.println("max = "+max);
-        }
-
-    public static void min(int[] arr){
-        int min = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            if (min> arr[i]){
-                min = arr[i];
-            }
-        }
-        System.out.println("min = "+min);
-    }
-
-
-
-    public static void task1(){
-        for (int i = 0 ; i<=110 ; i++) {
-            if (i % 2 == 1)
-                System.out.println(i);
-        }
+    public static void main(String[] args) {
+        max(2);
+        max(9);
+        max(29);
+        max(99);
+        max(11);
+        max(19);
+        max(229);
+        max(929);
+        max(1675);
+        max(19875);
+        max(567849);
 
     }
 
-    public static void task2(){
-        for (int i = 90 ; i>=0 ; i-=5)
-            System.out.println(i);
+    public static void max(int num) {
+        String s = "";
+        String[] base1 = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+        String[] base2 = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+        String[] base3 = {"", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
 
+        if (num > 0 && num < 10)
+            s = base1[num];
+        else if (num > 10 && num < 20)
+            s = base3[num % 10];
+        else if (num > 19 && num < 100)
+            s = base2[num / 10] + " " + base1[num % 10];
+        else if (num > 99 && num < 1000)
+            s = base1[num / 100] + " hundred " + base2[(num / 10) % 10] + " " + base1[num % 10];
+        else if (num > 999 && num < 10000)
+            s = base1[num / 1000] + " thousand " + base1[(num / 100) % 10] + " hundred " + base2[(num / 10) % 10] + " " + base1[num % 10];
+        else if (num > 9999 && num < 100000)
+            s = base2[num / 10000] + " " + base1[(num / 1000) % 10] + " thousand " + base1[(num / 100) % 10] + " hundred " + base2[(num / 10) % 10] + " " + base1[num % 10];
+        else if (num > 99999 && num < 1000000)
+            s = base1[num / 100000] + " hundred " + base2[(num / 10000) % 10] + " " + base1[(num / 1000) % 10] + " thousand " + base1[(num / 100) % 10] + " hundred " + base2[(num / 10) % 10] + " " + base1[num % 10];
+
+        System.out.println(s);
     }
-
-    public static void task3(){
-        for (int i = 1 ; i<=40 ; i++) {
-            if (i % 2 == 0)
-                System.out.println(i);
-        }
-
-    }
-
-    public static void task4(){
-            int el = 2;
-        for (int i = 0 ; i<=20 ; i++) {
-            el*=2;
-            System.out.println(el);
-        }
-
-
-    }
-
-    public static void task5(){
-        for (int i = -29 ; i<=10 ; i++) {
-            if (i % 5 == 0)
-                System.out.println(i);
-        }
-
-    }
-
-    public static void task6(){
-            int sum1 = 0;
-            int even = 0;
-        for (int i = 50 ; i<=150 ; i++) {
-            sum1 += i;
-            if (i % 2 == 0)
-                even++;
-        }
-        System.out.println("Sum: "+sum1+"\t"+"Even: "+even);
-
-    }
-
-    public static void task7(){
-        int[] arr2 = {5,-3,-2,16,55,0};
-        int sum1 = 0;
-        int pos = 0;
-        for (int i = 0; i < arr2.length; i++) {
-            sum1 += arr2[i];
-            if (arr2[i] % 2 == 0)
-                pos++;
-        }
-        System.out.println("Sum: "+sum1+"\t"+"Even: "+pos);
-
-    }
-
-    static void fib() {
-        int first = 1;
-        int second = 1;
-
-        for (int i = 0; i <= 11; i++) {
-            System.out.print(first + " ");
-            int next = first + second;
-            first = second;
-            second = next;
-        }
-    }
-
-
-
 }
