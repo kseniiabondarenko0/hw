@@ -1,40 +1,74 @@
 public class Main {
     public static void main(String[] args) {
-        max(2);
-        max(9);
-        max(29);
-        max(99);
-        max(11);
-        max(19);
-        max(229);
-        max(929);
-        max(1675);
-        max(19875);
-        max(567849);
+        print1();
+        System.out.println();
+        print2();
+        System.out.println();
+        print3();
+        System.out.println();
+        print4();
+    }
+    public static void print1(){//
+
+        for (int y = 0; y < 10; y++) {
+
+            for (int x = 0; x < 10; x++) {
+                if ((x==y && x>4 || 9-x==y  && y>4 || y==9) )
+                    System.out.print(" * ");
+                else
+                    System.out.print("   ");
+            }
+            System.out.println();
+
+        }
 
     }
 
-    public static void max(int num) {
-        String s = "";
-        String[] base1 = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-        String[] base2 = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
-        String[] base3 = {"", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    public static void print2(){//
 
-        if (num > 0 && num < 10)
-            s = base1[num];
-        else if (num > 10 && num < 20)
-            s = base3[num % 10];
-        else if (num > 19 && num < 100)
-            s = base2[num / 10] + " " + base1[num % 10];
-        else if (num > 99 && num < 1000)
-            s = base1[num / 100] + " hundred " + base2[(num / 10) % 10] + " " + base1[num % 10];
-        else if (num > 999 && num < 10000)
-            s = base1[num / 1000] + " thousand " + base1[(num / 100) % 10] + " hundred " + base2[(num / 10) % 10] + " " + base1[num % 10];
-        else if (num > 9999 && num < 100000)
-            s = base2[num / 10000] + " " + base1[(num / 1000) % 10] + " thousand " + base1[(num / 100) % 10] + " hundred " + base2[(num / 10) % 10] + " " + base1[num % 10];
-        else if (num > 99999 && num < 1000000)
-            s = base1[num / 100000] + " hundred " + base2[(num / 10000) % 10] + " " + base1[(num / 1000) % 10] + " thousand " + base1[(num / 100) % 10] + " hundred " + base2[(num / 10) % 10] + " " + base1[num % 10];
+        for (int y = 0; y < 10; y++) {
 
-        System.out.println(s);
+            for (int x = 0; x < 10; x++) {
+                if ((x==y && x>4 || 9-y==x  && y<5 || x==9) )
+                    System.out.print(" * ");
+                else
+                    System.out.print("   ");
+            }
+            System.out.println();
+
+        }
+
+    }
+
+    public static void print3(){//
+
+        for (int y = 0; y < 10; y++) {
+
+            for (int x = 0; x < 10; x++) {
+                if ((x==y && x<5 || 9-y==x  && y<5 || y==0) )
+                    System.out.print(" * ");
+                else
+                    System.out.print("   ");
+            }
+            System.out.println();
+
+        }
+
+    }
+
+    public static void print4(){//
+
+        for (int y = 0; y < 10; y++) {
+
+            for (int x = 0; x < 10; x++) {
+                if ((x==y && x<5 || 9-x==y  && y>4 || x==0) )
+                    System.out.print(" * ");
+                else
+                    System.out.print("   ");
+            }
+            System.out.println();
+
+        }
+
     }
 }
