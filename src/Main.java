@@ -1,250 +1,231 @@
 public class Main {
+
     public static void main(String[] args) {
-        int[][] ar  = {
-                {1,2,3},
-                {1,2,3},
-                {4,2,3}};
-        task1(ar);
-        task2(ar);
-        task3(ar);
-        task4(ar);
-        task5(ar);
-        task6(ar);
-        task7(ar);
-        task8(ar);
-        task9(ar);
-        task10(ar);
-        task11(ar);
-        task12(ar);
-        task13(ar);
-        task14(ar, 3);
-        task15(ar);
-    }
-    public static void task1(int[][] ar){
-        int sum = 0;
-        for (int i = 0; i < ar.length; i++) {
-            for (int j = 0; j < ar[i].length; j++) {
-                    sum+=ar[i][j];
+        System.out.println(task1(1));
+        System.out.println(task1(0));
+        System.out.println(task1(-3));
 
-            }
+        System.out.println(task2(1));
+        System.out.println(task2(0));
+        System.out.println(task2(-3));
 
-        }
-        System.out.println(sum);
+        System.out.println(task3(1));
+        System.out.println(task3(0));
+        System.out.println(task3(-3));
 
-    }
-    public static void task2(int[][] ar) {
-        int sum = 0;
-        int flag = 0;
-        for (int i = 0; i < ar.length; i++) {
-            for (int j = 0; j < ar[i].length; j++) {
-                sum += ar[i][j];
-                flag++;
-            }
-            int avarage = sum / flag;
-            System.out.println(avarage);
+        System.out.println(task4(1));
+        System.out.println(task4(0));
+        System.out.println(task4(-3));
 
-        }
-    }
-        public static void task3(int[][] ar) {
-            for (int i = 0; i < ar.length; i++) {
-                int max = ar[i][0];
-                for (int j = 1; j < ar[i].length; j++) {
-                    if (ar[i][j] > max) {
-                        max = ar[i][j];
-                    }
-                }
-                System.out.println(max);
-            }
-        }
+        System.out.println(task5(1));
+        System.out.println(task5(0));
+        System.out.println(task5(-3));
 
-            public static void task4(int[][] ar) {
-                for (int j = 0; j < ar[0].length; j++) {
-                    int min = ar[0][j];
-                    for (int i = 1; i < ar.length; i++) {
-                        if (ar[i][j] < min) {
-                            min = ar[i][j];
-                        }
-                    }
-                    System.out.println(min);
-                }
-            }
-            public static void task5(int[][] ar){
-            for (int i = 0; i < ar.length; i++) {
-                int sum = 0;
-                for (int j = 0; j < ar[i].length; j++) {
-                    sum += ar[i][j];
-                }
-                System.out.println(sum);
-            }
-        }
+        System.out.println(task6(1));
+        System.out.println(task6(0));
+        System.out.println(task6(-3));
 
-    public static void task6(int[][] ar){
-        for (int i = 0; i < ar.length; i++) {
-            if (ar[i][i] < 0) {
-                System.out.println("False");
-            }
-        }
-        System.out.println("True");
+        System.out.println(task7("test"));
+        System.out.println(task7("тест"));
+        System.out.println(task7("3"));
+
+        System.out.println(task8("1"));
+        System.out.println(task8("1"));
+        System.out.println(task8("3"));
+
+        System.out.println(task9(true));
+        System.out.println(task9(false));
+
+        System.out.println(task10(true));
+        System.out.println(task10(false));
+
+        System.out.println(task11(5));
+        System.out.println(task11(0));
+        System.out.println(task11(-3));
+        System.out.println(task11(2));
+
+        System.out.println(task12(5));
+        System.out.println(task12(0));
+        System.out.println(task12(-3));
+        System.out.println(task12(2));
+
+        System.out.println(task13(1, 3));
+        System.out.println(task13(0, 6));
+        System.out.println(task13(3, 5));
+
+        System.out.println(task14(1, 3));
+        System.out.println(task14(0, 6));
+        System.out.println(task14(3, 5));
+
+        System.out.println(task15(1));
+        System.out.println(task15(0));
+        System.out.println(task15(3));
+        System.out.println(task15(2));
+
+        System.out.println(task16(3));
+        System.out.println(task16(-5));
+        System.out.println(task16(13));
+        System.out.println(task16(21));
+
+        System.out.println(task17(3));
+        System.out.println(task17(-5));
+        System.out.println(task17(12));
+        System.out.println(task17(9));
+
+        //завдання фібоначчі
+        int n = 6;
+        System.out.println("Число Фібоначчі для n = " + n + " дорівнює " + fibonacci(n));
     }
 
-    public static void task7(int[][] ar){
-            int[] tmp = ar[1];
-            ar[1] = ar[2];
-            ar[2] = tmp;
-
-            for (int i = 0; i< ar.length; i++){
-                for (int j = 0; j< ar.length; j++)
-                    System.out.print(ar[i][j]+" ");
-            }
-        }
-
-
-    public static void task8(int[][] ar) {
-        int sum = 0;
-
-        for (int i = 0; i < ar.length; i++) {
-            boolean neg = false;
-
-            for (int j = 0; j < ar[i].length; j++) {
-                if (ar[i][j] < 0) {
-                    neg = true;
-                    break;
-                }
-            }
-
-            if (neg) {
-                for (int j = 0; j < ar[i].length; j++) {
-                    sum += ar[i][j];
-                }
-            }
-        }
-
-        System.out.println(sum);;
+    public static String task1(int a){
+        if (a==0)
+            return "Right";
+        else
+            return "Wrong";
     }
 
-    public static void task9(int[][] ar) {
-        int count = 0;
-
-        for (int i = 0; i < ar.length; i++) {
-            for (int j = 0; j < ar[i].length; j++) {
-                if (ar[i][j]%2==0)
-                count++;
-            }
-        }
-        System.out.println(count);
+    public static String task2(int a){
+        if (a>0)
+            return "Right";
+        else
+            return "Wrong";
     }
 
-    public static void task10(int[][] ar) {
-        int count = 0;
-
-        for (int i = 0; i < ar.length; i++) {
-            for (int j = 0; j < ar[i].length; j++) {
-                if (ar[i][j] < 0)
-                    count++;
-            }
-        }
-        System.out.println(count);
+    public static String task3(int a){
+        if (a<0)
+            return "Right";
+        else
+            return "Wrong";
     }
 
-    public static void task11(int[][] ar) {
-        int count = 1;
-
-        for (int i = 0; i < ar.length; i++) {
-            for (int j = 0; j < ar[i].length; j++) {
-                if (ar[i][j] == 0) {
-                    ar[i][j] = count++;
-                    System.out.println(ar[i][j]);
-                }
-            }
-
-        }
-
-        for (int i = 0; i < ar.length; i++) {
-            for (int j = 0; j < ar[i].length; j++) {
-                System.out.print(ar[i][j]);
-            }
-            System.out.println();
-        }
-
-
+    public static String task4(int a){
+        if (a>=0)
+            return "Right";
+        else
+            return "Wrong";
     }
 
-    public static void task12(int[][] ar) {
-        int lsum = 0;
-        int rsum = 0;
-        int n = ar.length;
+    public static String task5(int a){
+        if (a<=0)
+            return "Right";
+        else
+            return "Wrong";
+    }
 
-        for (int i = 0; i < ar.length; i++) {
-            lsum += ar[i][i];
-            rsum += ar[i][n - 1 - i];
+    public static String task6(int a){
+        if (a!=0)
+            return "Right";
+        else
+            return "Wrong";
+    }
+
+    public static String task7(String a){
+        if (a.equals("test"))
+            return "Right";
+        else
+            return "Wrong";
+    }
+
+    public static String task8(String a){
+        if (a.equals("1"))
+            return "Right";
+        else
+            return "Wrong";
+    }
+
+    public static String task9(boolean test){
+        if (test==true)
+            return "Right";
+        else
+            return "Wrong";
+    }
+
+    public static String task10(boolean test){
+        if (test!=true)
+            return "Right";
+        else
+            return "Wrong";
+    }
+
+    public static String task11(int a) {
+        if (a > 0 && a < 5)
+            return "Right";
+        else
+            return "Wrong";
+    }
+
+    public static double task12(double a) {
+        if (a == 0 || a == 2) {
+            a = a + 7;
+            return a;
         }
-        if (lsum == rsum)
-            System.out.println("Yes");
-        else {
-            System.out.println("No");
+        else{
+            a = a / 10;
+            return a;
         }
     }
 
-    public static void task13(int[][] ar) {
-        int sum = 0;
-
-        for (int i = 0; i < ar.length; i++) {
-                    sum+=ar[i][i];
+    public static int task13(int a, int b) {
+        if (a <=1 && b >= 3) {
+            return a + b;
         }
-        System.out.println(sum);
-    }
-
-    public static void task14(int[][] ar, int target) {
-        int count = 0;
-        for (int i = 0; i < ar.length; i++) {
-            for (int j = 0; j <ar.length; j++) {
-                if (ar[i][j] < target) {
-                    count++;
-                }
-            }
-        }
-        System.out.println(count);
-    }
-
-    public static void task15(int[][] ar) {
-        int rows = ar.length;
-        int cols = ar[0].length;
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                for (int k = 0; k < rows; k++) {
-                    for (int l = 0; l < cols; l++) {
-                        if ((i != k || j != l) && ar[i][j] == ar[k][l]) {
-                            System.out.println("Not unic");
-                            return;
-                        }
-                    }
-                }
-            }
-        }
-
-        System.out.println("Unic");
-    }
-
-    public static void insertionSort(int ar[]) {
-        int n = ar.length;
-        for (int j = 1; j < n; j++) {
-            int key = ar[j];
-            int i = j-1;
-            while ( (i > -1) && ( ar [i] > key ) ) {
-                ar [i+1] = ar [i];
-                i--;
-            }
-            ar[i+1] = key;
+        else{
+            return a - b;
         }
     }
 
+    public static String task14(int a, int b) {
+        if ( a>=2 && a <=11 || b >= 6 && b<=14)
+            return "Right";
+        else
+            return "Wrong";
+    }
 
+    public static String task15(int num) {
+        switch (num){
+            case 1:
+                return "Winter";
+            case 2:
+                return "Spring";
+            case 3:
+                return "Summer";
+            case 4:
+                return "Fall";
+            default:
+                return "Oooops, something wrong !";
+        }
+    }
+
+    public static String task16(int day) {
+        if (day > 0 && day <=10)
+            return "1st decade";
+        else if (day > 10 && day <=20)
+            return "2nd decade";
+        else if (day > 20 && day <=31)
+            return "3rd decade";
+        else
+            return "Smth wrong...";
+    }
+
+    public static String task17(int month) {
+        if (month > 0 && month <=2 || month == 12)
+            return "Winter";
+        else if (month > 2 && month <=5 )
+            return "Spring";
+        else if (month > 5 && month <=8)
+            return "Summer";
+        else if (month > 8 && month <=11)
+            return "Fall";
+        else
+            return "Smth wrong...";
+    }
+
+    public static int fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
 
 }
-
-
-
-
-
-
