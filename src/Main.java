@@ -13,7 +13,11 @@ public class Main {
     }
 
     public static String reverse(String str) {
-        return new StringBuilder(str).reverse().toString();
+        String reversetext="";
+        for (int i = str.length() - 1; i>-1; i--) {
+            reversetext+=str.charAt(i);
+        }
+        return reversetext;
     }
 
     public static String task2(String str){
