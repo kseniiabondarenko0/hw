@@ -1,4 +1,4 @@
-package task2;
+package Task14.task2;
 
 public class Dog extends Pet implements IAnimal{
     public Dog(String name, int age) {

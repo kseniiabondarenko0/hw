@@ -1,4 +1,4 @@
-package task2;
+package Task14.task2;
 
 public abstract class Pet implements IAnimal {
     String name;

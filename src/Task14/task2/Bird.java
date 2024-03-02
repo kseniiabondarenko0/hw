@@ -1,4 +1,4 @@
-package task2;
+package Task14.task2;
 
 public class Bird extends Pet implements IAnimal{
 

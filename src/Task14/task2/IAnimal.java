@@ -1,4 +1,4 @@
-package task2;
+package Task14.task2;
 
 public interface IAnimal {
     void eat();
