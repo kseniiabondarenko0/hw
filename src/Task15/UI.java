@@ -12,43 +12,88 @@ public class UI extends JFrame implements ActionListener {
 
     UI(){
         setSize(700,500);
-        setLayout(new GridLayout(3, 2, 50, 30));
+        setLayout(new GridLayout(5,4, 5,5));
 
 
-        for (int i = 1; i <= 9; i++) {
-            JButton numberButton = new JButton(String.valueOf(i));
-            numberButton.addActionListener(this);
-            add(numberButton);
-        }
-
-        JButton zeroButton = new JButton("0");
-        zeroButton.addActionListener(this);
-        add(zeroButton);
 
 
-        JButton addButton = new JButton("+");
-        addButton.addActionListener(this);
-        add(addButton);
+//        for (int i = 1; i <= 9; i++) {
+//            JButton numberButton = new JButton(String.valueOf(i));
+//            numberButton.addActionListener(this);
+//            add(numberButton);
+//        }
+        //setLayout(new BorderLayout());
 
-        JButton subtractButton = new JButton("-");
-        subtractButton.addActionListener(this);
-        add(subtractButton);
+        JButton clearButton = new JButton("C");
+        clearButton.addActionListener(this);
+        add(clearButton);
 
-        JButton multiplyButton = new JButton("*");
-        multiplyButton.addActionListener(this);
-        add(multiplyButton);
+        JButton sButton = new JButton("7");
+        sButton.addActionListener(this);
+        add(sButton);
+
+        JButton eButton = new JButton("8");
+        eButton.addActionListener(this);
+        add(eButton);
+
+        JButton nButton = new JButton("9");
+        nButton.addActionListener(this);
+        add(nButton);
 
         JButton divideButton = new JButton("/");
         divideButton.addActionListener(this);
         add(divideButton);
 
+        JButton fButton = new JButton("4");
+        fButton.addActionListener(this);
+        add(fButton);
+
+        JButton ffButton = new JButton("5");
+        ffButton.addActionListener(this);
+        add(ffButton);
+
+        JButton s6Button = new JButton("6");
+        s6Button.addActionListener(this);
+        add(s6Button);
+
+        JButton multiplyButton = new JButton("*");
+        multiplyButton.addActionListener(this);
+        add(multiplyButton);
+
+        JButton oButton = new JButton("1");
+        oButton.addActionListener(this);
+        add(oButton);
+
+        JButton tButton = new JButton("2");
+        tButton.addActionListener(this);
+        add(tButton);
+
+        JButton thButton = new JButton("3");
+        thButton.addActionListener(this);
+        add(thButton);
+
+        JButton subtractButton = new JButton("-");
+        subtractButton.addActionListener(this);
+        add(subtractButton);
+
+        JButton zeroButton = new JButton("0");
+        zeroButton.addActionListener(this);
+        add(zeroButton);
+
         JButton equalsButton = new JButton("=");
         equalsButton.addActionListener(this);
         add(equalsButton);
 
-        JButton clearButton = new JButton("C");
-        clearButton.addActionListener(this);
-        add(clearButton);
+        JButton addButton = new JButton("+");
+        addButton.addActionListener(this);
+        add(addButton);
+
+
+
+
+
+
+
 
 
         add(text);
