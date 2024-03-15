@@ -1,4 +1,5 @@
 package Task15;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,23 +11,42 @@ public class UI extends JFrame implements ActionListener {
     private String num1;
     private String sign;
 
-    UI(){
-        setSize(700,500);
-        setLayout(new GridLayout(5,4, 5,5));
+    UI() {
+        setSize(700, 500);
+        add(text);
+        setLayout(new GridLayout(4, 5, 5, 5)); // Змінено розташування на 4 рядки та 5 стовпців
 
+        JButton oButton = new JButton("1");
+        oButton.addActionListener(this);
+        add(oButton);
 
+        JButton tButton = new JButton("2");
+        tButton.addActionListener(this);
+        add(tButton);
 
-
-//        for (int i = 1; i <= 9; i++) {
-//            JButton numberButton = new JButton(String.valueOf(i));
-//            numberButton.addActionListener(this);
-//            add(numberButton);
-//        }
-        //setLayout(new BorderLayout());
+        JButton thButton = new JButton("3");
+        thButton.addActionListener(this);
+        add(thButton);
 
         JButton clearButton = new JButton("C");
         clearButton.addActionListener(this);
         add(clearButton);
+
+        JButton fButton = new JButton("4");
+        fButton.addActionListener(this);
+        add(fButton);
+
+        JButton ffButton = new JButton("5");
+        ffButton.addActionListener(this);
+        add(ffButton);
+
+        JButton s6Button = new JButton("6");
+        s6Button.addActionListener(this);
+        add(s6Button);
+
+        JButton addButton = new JButton("+");
+        addButton.addActionListener(this);
+        add(addButton);
 
         JButton sButton = new JButton("7");
         sButton.addActionListener(this);
@@ -44,33 +64,13 @@ public class UI extends JFrame implements ActionListener {
         divideButton.addActionListener(this);
         add(divideButton);
 
-        JButton fButton = new JButton("4");
-        fButton.addActionListener(this);
-        add(fButton);
 
-        JButton ffButton = new JButton("5");
-        ffButton.addActionListener(this);
-        add(ffButton);
-
-        JButton s6Button = new JButton("6");
-        s6Button.addActionListener(this);
-        add(s6Button);
 
         JButton multiplyButton = new JButton("*");
         multiplyButton.addActionListener(this);
         add(multiplyButton);
 
-        JButton oButton = new JButton("1");
-        oButton.addActionListener(this);
-        add(oButton);
 
-        JButton tButton = new JButton("2");
-        tButton.addActionListener(this);
-        add(tButton);
-
-        JButton thButton = new JButton("3");
-        thButton.addActionListener(this);
-        add(thButton);
 
         JButton subtractButton = new JButton("-");
         subtractButton.addActionListener(this);
@@ -84,19 +84,9 @@ public class UI extends JFrame implements ActionListener {
         equalsButton.addActionListener(this);
         add(equalsButton);
 
-        JButton addButton = new JButton("+");
-        addButton.addActionListener(this);
-        add(addButton);
 
 
 
-
-
-
-
-
-
-        add(text);
 
         setVisible(true);
     }
@@ -107,7 +97,7 @@ public class UI extends JFrame implements ActionListener {
         String buttonText = button.getText();
 
 
-        if (buttonText.matches("\\d")) {        // дивилася туторіал на ютубі, але так і не допетрала, навіщо конкретня ця строка, але загалом - для перевірки)
+        if (buttonText.matches("\\d")) {
             if (text.getText().equals("0")) {
                 text.setText(buttonText);
             } else {
@@ -116,7 +106,7 @@ public class UI extends JFrame implements ActionListener {
         }
 
 
-        if (buttonText.matches("[+\\-*/]")) {       //   як морально заблудша душа знайшла в інеті
+        if (buttonText.matches("[+\\-*/]")) {
             num1 = text.getText();
             sign = buttonText;
             text.setText("");
@@ -147,9 +137,5 @@ public class UI extends JFrame implements ActionListener {
         if (buttonText.equals("C")) {
             text.setText("0");
         }
-    }
-
-    public static void main(String[] args) {
-        new UI();
     }
 }

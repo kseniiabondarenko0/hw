@@ -27,11 +27,14 @@ class LibraryManagementSystem {
     }
 
     // Метод для видалення книги за ISBN
-    public void removeBook(String isbn) throws BookNotFoundException {
-        boolean removed = books.removeIf(book -> book.getIsbn().equals(isbn));
-        if (!removed) {
-            throw new BookNotFoundException("Book with ISBN " + isbn + " not found");
+    public  void removeBook(String isbn) throws BookNotFoundException {
+        for (Book book : books) {
+            if (book.getIsbn().equals(isbn)) {
+                books.remove(book);
+                return;
+            }
         }
+        throw new BookNotFoundException("Book with ISBN " + isbn + " not found");
     }
 
     // Метод для пошуку книги за ISBN
